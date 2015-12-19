@@ -3,12 +3,15 @@ def initialize(context):
 
 # Will be called on every trade event for the securities you specify.
 def handle_data(context, data):
-    ma1 = data[context.spy].mavg(55)
-    ma2 = data[context.spy].mavg(200)
+    mavg1 = data[context.spy].mavg(55)
+    mavg2 = data[context.spy].mavg(200)
 
-    if ma1 > ma2:
+    print "The value of mavg 1 is " + str(mavg1)
+    print "The value of mavg 2 is " + str(mavg2)
+
+    if mavg1 > mavg2:
         order_target_percent(context.spy, 1.0)
-    elif ma1 < ma2:
+    elif mavg1 < mavg2:
         order_target_percent(context.spy, 0.00)
 
 """
