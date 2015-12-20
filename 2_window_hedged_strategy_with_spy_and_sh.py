@@ -3,8 +3,8 @@ def initialize(context):
     context.sh = sid(32268)
 
 def handle_data(context, data):
-    mavg1 = data[context.spy].mavg(33)
-    mavg2 = data[context.spy].mavg(450)
+    mavg1 = data[context.spy].mavg(55)
+    mavg2 = data[context.spy].mavg(150)
 
     if mavg1 > mavg2:
         order_target_percent(context.sh, 0.00)
