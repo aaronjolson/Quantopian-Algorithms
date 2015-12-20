@@ -2,6 +2,7 @@ def initialize(context):
     context.spy = sid(8554)
     context.sso = sid(32270)
 
+
 def handle_data(context, data):
     mavg1 = data[context.spy].mavg(75)
     mavg2 = data[context.spy].mavg(425)

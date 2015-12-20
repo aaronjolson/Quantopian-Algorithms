@@ -4,6 +4,8 @@ def initialize(context):
     schedule_function(rebalance,
                       date_rule = date_rules.every_day(),
                       time_rule = time_rules.market_open())
+
+
 def rebalance(context, data):
     mavg1 = data[context.spy].mavg(75)
     mavg2 = data[context.spy].mavg(450)
@@ -12,6 +14,7 @@ def rebalance(context, data):
         order_target_percent(context.spy, 1.0)
     elif mavg1 < mavg2:
         order_target_percent(context.spy, 0.00)
+
 
 def handle_data(context, data):
     pass

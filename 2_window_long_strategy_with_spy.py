@@ -1,6 +1,7 @@
 def initialize(context):
     context.spy = sid(8554)
 
+
 # Will be called on every trade event for the securities you specify.
 def handle_data(context, data):
     mavg1 = data[context.spy].mavg(55)
